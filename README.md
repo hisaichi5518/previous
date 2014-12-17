@@ -1,6 +1,32 @@
 # Previous
 
-TODO: Write a gem description
+**Don't use this library outside of debugging situations.**
+
+Previous is 呼び出し元のselfを取得できるヤツです.
+
+You need my `debug_inspector`.
+
+- https://github.com/hisaichi5518/debug_inspector
+
+## Usage
+
+```ruby
+require "previous"
+
+module TestPreviousCalled1
+  def self.a
+    Previous.called
+  end
+end
+
+class TestPreviousCalled2
+  def a
+    p TestPreviousCalled1.a === self
+  end
+end
+
+TestPreviousCalled2.new.a #=> true
+```
 
 ## Installation
 
@@ -18,13 +44,9 @@ Or install it yourself as:
 
     $ gem install previous
 
-## Usage
-
-TODO: Write usage instructions here
-
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/previous/fork )
+1. Fork it ( https://github.com/hisaichi5518/previous/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
