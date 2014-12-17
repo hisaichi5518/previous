@@ -6,7 +6,7 @@ Previous is 呼び出し元のselfを取得できるヤツです.
 
 You need my `debug_inspector`.
 
-- https://github.com/hisaichi5518/debug_inspector
+- https://github.com/hisaichi5518/debug_inspector/tree/add-frame_self
 
 ## Usage
 
